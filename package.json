@@ -1,0 +1,36 @@
+{
+  "name": "restagram",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "empty": "^0.10.1",
+    "flow-bin": "^0.42.0",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.0",
+    "node-sass": "^4.5.1",
+    "prettier": "^0.22.0",
+    "react-scripts": "0.9.5",
+    "yarn-run-all": "^3.1.1"
+  },
+  "scripts": {
+    "build-css": "node-sass src/ -o src/",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "yarn run build-css && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote --trailing-comma all --write",
+      "git add"
+    ]
+  }
+}
