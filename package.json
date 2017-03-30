@@ -4,20 +4,24 @@
   "private": true,
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.1",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "empty": "^0.10.1",
     "flow-bin": "^0.42.0",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
     "prettier": "^0.22.0",
-    "react-scripts": "0.9.5",
-    "yarn-run-all": "^3.1.1"
+    "react-scripts": "0.9.5"
   },
   "scripts": {
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p start-js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -26,8 +30,14 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --single-quote --trailing-comma all --write",
+      "prettier --print-width 120 --single-quote --trailing-comma all --write",
       "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/app/**/*.{js,jsx}",
+      "!src/app/**/*.container.{js,jsx}"
     ]
   }
 }
