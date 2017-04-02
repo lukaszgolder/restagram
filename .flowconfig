@@ -1,9 +1,15 @@
 [ignore]
+<PROJECT_ROOT>/node_modules/styled-components/src/.*
+<PROJECT_ROOT>/node_modules/styled-components/lib/models/StyleSheet.js.flow
+<PROJECT_ROOT>/node_modules/styled-components/dangerfile.js
 
 [include]
+flow-typed
 
 [libs]
+node_modules/styled-components/flow-typed/react-native.js
+node_modules/styled-components/flow-typed/glamor_vx.x.x.js
+node_modules/styled-components/flow-typed/lodash_v4.x.x.js
+node_modules/styled-components/flow-typed/inline-style-prefixer_vx.x.x.js
 
 [options]
-module.name_mapper='.+\.s?css' -> 'empty/object'
-
