@@ -8,12 +8,13 @@ export const getRoutes = store => ({
       path: '/',
       component: require('./app.component').AppComponent,
     },
+    {
+      path: '/login',
+      component: require('./auth/auth.component.js').LoginComponent,
+    },
   ],
 });
 
 export const appRoutes = store => (
-  <Router
-    history={syncHistoryWithStore(browserHistory, store)}
-    routes={getRoutes(store)}
-  />
+  <Router history={syncHistoryWithStore(browserHistory, store)} routes={getRoutes(store)} />
 );

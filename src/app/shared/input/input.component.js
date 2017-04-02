@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 type Props = {
   placeholder: string,
-  type: 'text' | 'password',
+  type: 'text' | 'password' | 'email',
 };
 
 export class InputComponent extends Component {
