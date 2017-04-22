@@ -13,10 +13,15 @@ export const authReducer = handleActions(
       ...state,
       loading: true,
     }),
-    [auth.user.login.success]: (state, { payload }) => ({
-      ...state,
-      loading: false,
-    }),
+    [auth.user.login.success]: (state, { payload: { access_token, user } }) => {
+      localStorage.setItem('access_token', access_token);
+
+      return {
+        ...state,
+        loading: false,
+        user,
+      };
+    },
     [auth.user.login.failure]: (state, { payload }) => ({
       ...state,
       loading: false,
