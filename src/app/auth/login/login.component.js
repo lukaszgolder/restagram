@@ -2,8 +2,15 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { browserHistory } from 'react-router';
 
 export class LoginFormComponent extends Component {
+  componentDidUpdate() {
+    if (this.props.access_token) {
+      browserHistory.push('/dashboard');
+    }
+  }
+
   render() {
     const { handleSubmit } = this.props;
 

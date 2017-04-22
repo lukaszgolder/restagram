@@ -6,7 +6,9 @@ import { reduxForm } from 'redux-form';
 import { LoginFormComponent } from './login.component';
 import { login } from '../../redux/auth/auth.actions';
 
-const mapStateToProps = state => ({});
+const mapStateToProps = ({ auth: { access_token } }) => ({
+  access_token,
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onSubmit: data => dispatch(login(data)),
