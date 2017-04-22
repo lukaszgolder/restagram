@@ -7,7 +7,10 @@ export const getRoutes = store => ({
     {
       path: '/',
       component: require('./app.component').AppComponent,
-      childRoutes: [...require('./auth/auth.routes').default(store)],
+      childRoutes: [
+        ...require('./auth/auth.routes').default(store),
+        ...require('./dashboard/dashboard.routes').default(store),
+      ],
     },
   ],
 });
