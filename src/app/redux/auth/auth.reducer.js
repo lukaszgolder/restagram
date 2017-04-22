@@ -22,5 +22,5 @@ export const authReducer = handleActions(
       loading: false,
     }),
   },
-  { initState },
+  { ...initState },
 );

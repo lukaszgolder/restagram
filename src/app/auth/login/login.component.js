@@ -5,8 +5,10 @@ import { Link } from 'react-router';
 
 export class LoginFormComponent extends Component {
   render() {
+    const { handleSubmit } = this.props;
+
     return (
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Restagram</h1>
         <h2>login</h2>
 
