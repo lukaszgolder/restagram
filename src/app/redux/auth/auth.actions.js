@@ -2,7 +2,7 @@
 import { createActions } from 'redux-actions';
 import { RSAA } from 'redux-api-middleware';
 
-export const auth = createActions({
+export const authActions = createActions({
   user: {
     login: {
       request: ({ username, password }) => ({
@@ -20,7 +20,7 @@ export const auth = createActions({
 
 export const login = (data: any) => ({
   [RSAA]: {
-    types: [auth.user.login.request(data), auth.user.login.success(), auth.user.login.failure()],
+    types: [authActions.user.login.request(data), authActions.user.login.success(), authActions.user.login.failure()],
     endpoint: 'oauth/token',
     method: 'POST',
   },
