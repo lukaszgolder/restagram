@@ -1,17 +1,26 @@
 // @flow
-import { handleActions, combineActions } from 'redux-actions';
+import { handleActions } from 'redux-actions';
 import { auth } from './auth.actions';
+
+const initState = {
+  loading: false,
+  user: { username: null, name: null, email: null },
+};
 
 export const authReducer = handleActions(
   {
-    [combineActions(auth.user.login.request, auth.user.login.success, auth.user.login.failure)]: (
-      state,
-      { username, name, email },
-    ) => ({
-      username,
-      name,
-      email,
+    [auth.user.login.request]: (state, { payload }) => ({
+      ...state,
+      loading: true,
+    }),
+    [auth.user.login.success]: (state, { payload }) => ({
+      ...state,
+      loading: false,
+    }),
+    [auth.user.login.failure]: (state, { payload }) => ({
+      ...state,
+      loading: false,
     }),
   },
-  { user: { username: null, name: null, email: null } },
+  { initState },
 );
