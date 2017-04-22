@@ -758,6 +758,12 @@ babel-plugin-transform-regenerator@^6.6.0, babel-plugin-transform-regenerator@6.
   dependencies:
     regenerator-transform "0.9.8"
 
+babel-plugin-transform-runtime@^6.5.2:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-runtime@6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.22.0.tgz#10968d760bbf6517243081eec778e10fa828551c"
@@ -852,7 +858,7 @@ babel-register@^6.22.0, babel-register@^6.24.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0:
+babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0, babel-runtime@^6.5.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
@@ -4884,6 +4890,15 @@ redux-actions:
     invariant "^2.2.1"
     lodash "^4.13.1"
     reduce-reducers "^0.1.0"
+
+redux-api-middleware@beta:
+  version "2.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/redux-api-middleware/-/redux-api-middleware-2.0.0-beta.1.tgz#53dcf0122e49e2b3b27969ff4d101d48d0732025"
+  dependencies:
+    babel-plugin-transform-runtime "^6.5.2"
+    babel-runtime "^6.5.0"
+    isomorphic-fetch "^2.1.1"
+    lodash.isplainobject "^3.2.0"
 
 redux-promise@^0.5.3:
   version "0.5.3"
