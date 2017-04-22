@@ -7,7 +7,7 @@ import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 import promiseMiddleware from 'redux-promise';
 import thunkMiddleware from 'redux-thunk';
-import apiMiddleware from 'redux-api-middleware';
+import { apiMiddleware } from 'redux-api-middleware';
 import { bodyMiddleware, endpointMiddleware } from './app/middlewares';
 
 import { appReducer } from './app/app.reducer';

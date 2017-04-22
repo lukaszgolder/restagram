@@ -1,5 +1,6 @@
 // @flow
 import { createActions } from 'redux-actions';
+import { RSAA } from 'redux-api-middleware';
 
 export const auth = createActions({
   user: {
@@ -14,5 +15,13 @@ export const auth = createActions({
       success: () => undefined,
       failure: () => undefined,
     },
+  },
+});
+
+export const login = (data: any) => ({
+  [RSAA]: {
+    types: [auth.user.login.request(data), auth.user.login.success(), auth.user.login.failure()],
+    endpoint: 'oauth/token',
+    method: 'POST',
   },
 });
