@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import test from '../../redux/auth/auth.actions';
 
 export class LoginFormComponent extends Component {
   render() {
